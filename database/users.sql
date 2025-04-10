@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    gender VARCHAR(10) CHECK (gender IN ('Male', 'Female')),
+    phone VARCHAR(15) NOT NULL UNIQUE,
+    name VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    specialization VARCHAR(100) NOT NULL,
+    extern BOOLEAN DEFAULT FALSE,
+    matricule INTEGER UNIQUE DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
